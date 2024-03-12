@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+
+   
+    <style>
+        body {
+            background: linear-gradient(to right, #008080, #00CED1);
+        }
+    </style>
+
+</head>
+
+<body>
+
+
+
+
+    <h1 style="color: #4B0082;">SIMULADOR AQUAPÔNICO</h1>
+    <br><br><br>
+    Quantidade de produção desperdiçada (sistema tradicional): <input id="input_tradicional">
+    <br><br><br><br>
+    Quantidade de produção desperdiçada (sistema aquapônico): <input id="input_aquaponico">
+    <br><br><br><br>
+    <button onclick="calcular()">Valor Economizado</button>
+    <div id="div_mensagem"></div>
+    <br><br><br><br>
+
+    Quantidade de água utilizada (sistema tradicional): <input id="input_aguacional">
+    <br><br><br><br>
+    Quantidade de água utilizada (sistema aquapônico): <input id="input_aguaponia">
+    <br><br><br><br>
+    <button onclick="agua()">Calcular Diferença</button>
+    <div id="div_novamensagem"></div>
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+        var tradicional = Number(input_tradicional.value);
+        var aquaponia = Number(input_aquaponico.value);
+        var calculo = tradicional - aquaponia;
+
+        if (aquaponia < tradicional) {
+            div_mensagem.innerHTML = `Você irá economizar R$ ${calculo} se utilizar o sistema aquapônico`;
+        }
+
+        if (aquaponia > tradicional) {
+            div_mensagem.innerHTML = `Existe algum erro no seu sistema aquapônico!`;
+        }
+
+    }
+
+    function agua() {
+        var aguacional = Number(input_aguacional.value);
+        var aguaponia = Number(input_aguaponia.value);
+        diferença = aguacional - aguaponia;
+
+        if (aguaponia < aguacional) {
+            div_novamensagem.innerHTML = `Você irá economizar R$ ${diferença} se utilizar o sistema aquapônico`;
+        }
+
+        if (aguaponia > aguacional) {
+
+            div_novamensagem.innerHTML = `Existe algum erro no seu sistema aquapônico`;
+        }
+
+    }
+</script>
